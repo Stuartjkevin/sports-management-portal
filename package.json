@@ -1,0 +1,23 @@
+{
+  "name": "sport-team-portal",
+  "private": true,
+  "type": "module",
+  "description": "Multi-Sport Team Management and Performance Analytics System",
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "postinstall": "node scripts/setup.js",
+    "dev": "concurrently --kill-others-on-fail --names api,web --prefix-colors cyan,magenta \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "start": "npm start -w backend",
+    "build": "npm run build -w frontend",
+    "smoke": "npm run smoke -w backend"
+  },
+  "devDependencies": {
+    "concurrently": "9.2.0"
+  }
+}

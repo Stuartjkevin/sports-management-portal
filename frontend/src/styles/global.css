@@ -1,0 +1,158 @@
+/* =========================================================
+   Global custom styles for Sport Team Management Portal.
+   Loaded AFTER Bootstrap in main.jsx so these rules win.
+   ========================================================= */
+
+:root {
+  --stp-navy: #0f1f3d;
+  --stp-navy-light: #1b2f57;
+  --stp-bg: #f4f6fa;
+  --stp-surface: #ffffff;
+  --stp-border: #e3e8ef;
+  --stp-text: #1e293b;
+  --stp-muted: #64748b;
+
+  --stp-cricket: #16a34a;
+  --stp-football: #2563eb;
+  --stp-basketball: #ea580c;
+  --stp-volleyball: #ca8a04;
+
+  --stp-sidebar-width: 250px;
+  --stp-topbar-height: 64px;
+
+  --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bs-body-color: var(--stp-text);
+}
+
+body {
+  background: var(--stp-bg);
+  color: var(--stp-text);
+  font-family: var(--bs-body-font-family);
+}
+
+h1, h2, h3, h4, h5, h6 { font-weight: 700; color: var(--stp-navy); }
+
+/* ---------- Helpers ---------- */
+.text-navy { color: var(--stp-navy) !important; }
+.bg-navy { background: var(--stp-navy) !important; }
+.text-muted-soft { color: var(--stp-muted); }
+.cursor-pointer { cursor: pointer; }
+.small-caps { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--stp-muted); font-weight: 600; }
+
+.btn-navy { background: var(--stp-navy); color: #fff; border: 1px solid var(--stp-navy); }
+.btn-navy:hover, .btn-navy:focus { background: var(--stp-navy-light); color: #fff; }
+
+/* ---------- Cards & tables ---------- */
+.card { border: 1px solid var(--stp-border); border-radius: 12px; box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04); }
+.card-header { background: transparent; border-bottom: 1px solid var(--stp-border); font-weight: 600; padding: 14px 20px; }
+.card-body { padding: 20px; }
+
+.table thead th {
+  font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.04em;
+  color: var(--stp-muted); font-weight: 600; background: #f8fafc; white-space: nowrap;
+}
+.table td { vertical-align: middle; }
+
+.stat-card .stat-icon {
+  width: 46px; height: 46px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+}
+.stat-card .stat-value { font-size: 1.6rem; font-weight: 700; color: var(--stp-navy); line-height: 1.1; }
+
+.chart-box { position: relative; height: 280px; }
+
+/* ---------- Sport colours ---------- */
+.badge-sport { font-weight: 600; }
+.badge-sport-cricket { background: rgba(22, 163, 74, 0.12); color: var(--stp-cricket); }
+.badge-sport-football { background: rgba(37, 99, 235, 0.12); color: var(--stp-football); }
+.badge-sport-basketball { background: rgba(234, 88, 12, 0.12); color: var(--stp-basketball); }
+.badge-sport-volleyball { background: rgba(202, 138, 4, 0.12); color: var(--stp-volleyball); }
+
+.accent-cricket { border-top: 4px solid var(--stp-cricket); }
+.accent-football { border-top: 4px solid var(--stp-football); }
+.accent-basketball { border-top: 4px solid var(--stp-basketball); }
+.accent-volleyball { border-top: 4px solid var(--stp-volleyball); }
+
+.jersey {
+  width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; font-size: 1.1rem; color: #fff; background: var(--stp-navy);
+}
+.jersey-cricket { background: var(--stp-cricket); }
+.jersey-football { background: var(--stp-football); }
+
+/* ---------- Public pages ---------- */
+.public-navbar { background: #fff; border-bottom: 1px solid var(--stp-border); }
+.navbar-brand { font-weight: 700; color: var(--stp-navy) !important; }
+
+.hero { background: var(--stp-navy); color: #fff; padding: 96px 0 88px; }
+.hero h1 { color: #fff; font-size: clamp(2rem, 4vw, 3.2rem); }
+.hero .lead { color: #cbd5e1; }
+.hero-panel { background: var(--stp-navy-light); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; }
+
+.feature-icon {
+  width: 48px; height: 48px; border-radius: 12px;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; background: #eef2ff; color: var(--stp-navy);
+}
+.section { padding: 80px 0; }
+.cta-section { background: var(--stp-navy); color: #fff; border-radius: 16px; padding: 48px; }
+.cta-section h2 { color: #fff; }
+
+.auth-wrapper { min-height: calc(100vh - 140px); display: flex; align-items: center; padding: 40px 0; }
+.auth-card { max-width: 480px; width: 100%; margin: 0 auto; }
+
+.public-footer { border-top: 1px solid var(--stp-border); background: #fff; color: var(--stp-muted); font-size: 0.875rem; }
+
+/* ---------- Dashboard layout ---------- */
+.sidebar {
+  position: fixed; top: 0; left: 0; bottom: 0; width: var(--stp-sidebar-width);
+  background: var(--stp-navy); color: #cbd5e1; z-index: 1040;
+  display: flex; flex-direction: column; transition: transform 0.2s ease;
+}
+.sidebar-brand {
+  height: var(--stp-topbar-height); display: flex; align-items: center; gap: 10px;
+  padding: 0 20px; color: #fff; font-weight: 700; text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sidebar-brand:hover { color: #fff; }
+.sidebar-nav { padding: 12px; overflow-y: auto; flex: 1; }
+.sidebar-link {
+  display: flex; align-items: center; gap: 12px; padding: 10px 12px; margin-bottom: 2px;
+  border-radius: 8px; color: #cbd5e1; text-decoration: none; font-size: 0.925rem;
+}
+.sidebar-link:hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
+.sidebar-link.active { background: rgba(255, 255, 255, 0.12); color: #fff; font-weight: 600; }
+.sidebar-footer { padding: 16px 20px; font-size: 0.75rem; color: #94a3b8; border-top: 1px solid rgba(255, 255, 255, 0.08); }
+
+.dashboard-main { margin-left: var(--stp-sidebar-width); min-height: 100vh; display: flex; flex-direction: column; }
+.topbar {
+  height: var(--stp-topbar-height); background: #fff; border-bottom: 1px solid var(--stp-border);
+  display: flex; align-items: center; gap: 12px; padding: 0 24px;
+  position: sticky; top: 0; z-index: 1020;
+}
+.page-content { padding: 24px; flex: 1; }
+.page-header { margin-bottom: 24px; }
+.page-header h1 { font-size: 1.5rem; margin-bottom: 4px; }
+
+.demo-role-switcher select { min-width: 140px; }
+.sidebar-backdrop { display: none; }
+
+@media (max-width: 991.98px) {
+  .sidebar { transform: translateX(-100%); }
+  .sidebar.open { transform: translateX(0); }
+  .dashboard-main { margin-left: 0; }
+  .sidebar-backdrop.show { display: block; position: fixed; inset: 0; background: rgba(15, 31, 61, 0.45); z-index: 1035; }
+  .topbar { padding: 0 12px; }
+  .page-content { padding: 16px; }
+  .cta-section { padding: 32px 20px; }
+}
+
+/* ---------- Notifications ---------- */
+.notification-item { border-left: 4px solid transparent; }
+.notification-item.unread { background: #f0f6ff; border-left-color: var(--stp-football); }
+.notification-item.unread .notification-title { font-weight: 700; }
+
+/* ---------- Empty state ---------- */
+.empty-state { text-align: center; padding: 48px 16px; color: var(--stp-muted); }
+.empty-state > i { font-size: 2.5rem; display: block; margin-bottom: 12px; color: #94a3b8; }
